@@ -1,0 +1,85 @@
+﻿@font-face {
+    font-family: myfont;
+    src: url('font/GE_SS_Two_Bold.otf');
+}
+
+@font-face {
+    font-family: myfont2;
+    src: url('font/DroidKufi-Regular.ttf');
+}
+
+.navbar-default {
+    background-color: #0c5c82;
+    border-color: #e7e7e7;
+    /* height:70px;
+    padding-top:10px;*/
+}
+
+#body {
+    padding-top: 100px;
+    padding-bottom:30px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #e7e7e7;
+    font-family: myfont;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+    height: 75px;
+    padding-top: 10px;
+}
+
+body {
+    position: relative;
+}
+
+.myfooter {
+    Background-color: cornflowerblue;
+    padding-top: 10px;
+    height: 200px;
+    margin: auto;
+    font-family: myfont;
+    text-align: justify;
+}
+
+    .myfooter a {
+        color: bisque;
+    }
+
+.subfooter {
+    padding: 5px;
+    background-color: #0c5c82;
+    color: white;
+    text-align: center;
+}
+#searchName {
+    width: 130px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    background-image: url('../../images/search-icon-vector-editable-eps10-260nw-1263924991.jpg');
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    padding: 12px 20px 12px 12px;
+    transition: width 0.4s ease-in-out;
+}
+
+    #searchName:focus {
+        width: 100%;
+    }
+
+.img-size {
+    font-size: 90px;
+}
+
+.navbar-user {
+    padding: 10px;
+    padding-bottom: 0px;
+    width: 350px;

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    <meta name="viewport" content="width=device-width,initial scale=1" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <style>
+        #searchName {
+            width: 130px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            background-image: url('../../images/search-icon-vector-editable-eps10-260nw-1263924991.jpg');
+            background-repeat: no-repeat;
+            background-position: 10px 10px;
+            padding: 12px 20px 12px 12px;   
+            transition: width 0.4s ease-in-out;
+        }
+        #searchName:focus{
+            width:100%;
+        }
+   .img-size{
+       font-size:90px;
+   }
+   .navbar-user{
+       padding:10px;
+       padding-bottom:0px;
+       width:250px;
+   }
+
+    </style>
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top " style="padding-left:50px;padding-right:50px;">
+        <div calss="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="~/Home" class="navbar-brand">
+                    <img src="~/images/logo.png" style="width:50px;height:50px">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="~/Home/Index">
+                            <i class="glyphicon glyphicon-home"></i>
+                            الرئيسية
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="~/Home/About">
+                            <i class="glyphicon glyphicon-book"></i>
+                            حول الموقع
+                        </a>
+                    </li>
+                    <li>
+                        <a href="~/Home/Contact">
+                            <i class="glyphicon glyphicon-phone"></i>
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <li>
+                       @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                       { <input type="text" name="searchName"id="searchName"placeholder="ابحث هنا.."/>
+                       }
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial");
+            </div>
+        </div>
+    </nav>
+    <div class="container" id="body" style="margin-bottom=50px;">
+        <div class="row" style="min-height:600px;">
+            @RenderBody()
+        </div>
+    </div>
+    <!--footer-->
+    <footer class="myfooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>
+                        من نحن؟
+                    </h3>
+                    <p>
+                        مرحبا بكم في موقع التوظيف المقدم من الطلاب مزيد صديق وعبدالله درويش
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        روابط هامة
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">وظائف للقطاع العام</a>
+                        </li>
+                        <li>
+                            <a href="#">وظائف للقطاع الخاص</a>
+                        </li>
+                        <li>
+                            <a href="#">وظائف خارج البلاد</a>
+                        </li>
+                        <li>
+                            <a href="#">وظائف متنوعة</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        تواصل معنا
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">صفحتنا على الفيسبوك</a>
+                        </li>
+                        <li>
+                            <a href="#">تابعنا على توتير</a>
+                        </li>
+                        <li>
+                            <a href="#">شاهدنا على اليوتيوب</a>
+                        </li>
+                        <li>
+                            <a href="#">اترك لنا رسالة</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <p>   جميع الحقوق محفوظة لموقع التوظيف  2021</p>
+        </div>
+    </footer>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false);
+</body>
+</html>
